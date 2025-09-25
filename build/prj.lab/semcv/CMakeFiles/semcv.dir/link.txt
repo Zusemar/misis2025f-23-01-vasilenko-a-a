@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsemcv.a CMakeFiles/semcv.dir/semcv.cpp.o
+/usr/bin/ranlib libsemcv.a

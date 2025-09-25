@@ -1,0 +1,10 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/cmake_install.cmake",
+		"/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/prj.lab/cmake_install.cmake",
+		"/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/prj.lab/lab01/cmake_install.cmake",
+		"/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/prj.lab/semcv/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
