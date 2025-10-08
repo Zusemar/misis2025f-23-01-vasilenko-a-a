@@ -10,7 +10,6 @@ cmake --build /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build --confi
 
 `task01-01` — проверка соответствия имён файлов формату растра:
 
-
 ```bash
 /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/bin.rel/task01-01 ./bin.rel/task01-01 prj.lab/lab01/testdata/task01.lst
 ```

@@ -13,6 +13,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/4.1.1/CMakeSystem.cmake"
   "/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/prj.lab/CMakeLists.txt"
   "/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/prj.lab/lab01/CMakeLists.txt"
+  "/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/prj.lab/lab02/CMakeLists.txt"
   "/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/prj.lab/semcv/CMakeLists.txt"
   "/opt/homebrew/lib/cmake/opencv4/OpenCVConfig-version.cmake"
   "/opt/homebrew/lib/cmake/opencv4/OpenCVConfig.cmake"
@@ -63,6 +64,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "prj.lab/CMakeFiles/CMakeDirectoryInformation.cmake"
   "prj.lab/lab01/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "prj.lab/lab02/CMakeFiles/CMakeDirectoryInformation.cmake"
   "prj.lab/semcv/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
@@ -71,5 +73,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "prj.lab/lab01/CMakeFiles/task01-01.dir/DependInfo.cmake"
   "prj.lab/lab01/CMakeFiles/task01-02.dir/DependInfo.cmake"
   "prj.lab/lab01/CMakeFiles/task01-gen.dir/DependInfo.cmake"
+  "prj.lab/lab02/CMakeFiles/task02.dir/DependInfo.cmake"
   "prj.lab/semcv/CMakeFiles/semcv.dir/DependInfo.cmake"
   )

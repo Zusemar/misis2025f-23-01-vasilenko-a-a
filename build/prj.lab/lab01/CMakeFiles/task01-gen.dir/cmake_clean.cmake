@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/bin.rel/task01-gen"
-  "/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/bin.rel/task01-gen.pdb"
   "CMakeFiles/task01-gen.dir/task01-gen.cpp.o"
   "CMakeFiles/task01-gen.dir/task01-gen.cpp.o.d"
+  "task01-gen"
+  "task01-gen.pdb"
 )
 
 # Per-language clean rules from dependency scanning.
