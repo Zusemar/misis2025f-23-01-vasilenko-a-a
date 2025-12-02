@@ -84,24 +84,28 @@ clean: prj.lab/clean
 # Recursive "all" directory target.
 prj.lab/all: prj.lab/lab01/all
 prj.lab/all: prj.lab/lab02/all
+prj.lab/all: prj.lab/lab03/all
 prj.lab/all: prj.lab/semcv/all
 .PHONY : prj.lab/all
 
 # Recursive "codegen" directory target.
 prj.lab/codegen: prj.lab/lab01/codegen
 prj.lab/codegen: prj.lab/lab02/codegen
+prj.lab/codegen: prj.lab/lab03/codegen
 prj.lab/codegen: prj.lab/semcv/codegen
 .PHONY : prj.lab/codegen
 
 # Recursive "preinstall" directory target.
 prj.lab/preinstall: prj.lab/lab01/preinstall
 prj.lab/preinstall: prj.lab/lab02/preinstall
+prj.lab/preinstall: prj.lab/lab03/preinstall
 prj.lab/preinstall: prj.lab/semcv/preinstall
 .PHONY : prj.lab/preinstall
 
 # Recursive "clean" directory target.
 prj.lab/clean: prj.lab/lab01/clean
 prj.lab/clean: prj.lab/lab02/clean
+prj.lab/clean: prj.lab/lab03/clean
 prj.lab/clean: prj.lab/semcv/clean
 .PHONY : prj.lab/clean
 
@@ -148,6 +152,25 @@ prj.lab/lab02/preinstall:
 # Recursive "clean" directory target.
 prj.lab/lab02/clean: prj.lab/lab02/CMakeFiles/task02.dir/clean
 .PHONY : prj.lab/lab02/clean
+
+#=============================================================================
+# Directory level rules for directory prj.lab/lab03
+
+# Recursive "all" directory target.
+prj.lab/lab03/all: prj.lab/lab03/CMakeFiles/task03.dir/all
+.PHONY : prj.lab/lab03/all
+
+# Recursive "codegen" directory target.
+prj.lab/lab03/codegen: prj.lab/lab03/CMakeFiles/task03.dir/codegen
+.PHONY : prj.lab/lab03/codegen
+
+# Recursive "preinstall" directory target.
+prj.lab/lab03/preinstall:
+.PHONY : prj.lab/lab03/preinstall
+
+# Recursive "clean" directory target.
+prj.lab/lab03/clean: prj.lab/lab03/CMakeFiles/task03.dir/clean
+.PHONY : prj.lab/lab03/clean
 
 #=============================================================================
 # Directory level rules for directory prj.lab/semcv
@@ -295,6 +318,38 @@ prj.lab/lab02/CMakeFiles/task02.dir/codegen:
 prj.lab/lab02/CMakeFiles/task02.dir/clean:
 	$(MAKE) $(MAKESILENT) -f prj.lab/lab02/CMakeFiles/task02.dir/build.make prj.lab/lab02/CMakeFiles/task02.dir/clean
 .PHONY : prj.lab/lab02/CMakeFiles/task02.dir/clean
+
+#=============================================================================
+# Target rules for target prj.lab/lab03/CMakeFiles/task03.dir
+
+# All Build rule for target.
+prj.lab/lab03/CMakeFiles/task03.dir/all: prj.lab/semcv/CMakeFiles/semcv.dir/all
+	$(MAKE) $(MAKESILENT) -f prj.lab/lab03/CMakeFiles/task03.dir/build.make prj.lab/lab03/CMakeFiles/task03.dir/depend
+	$(MAKE) $(MAKESILENT) -f prj.lab/lab03/CMakeFiles/task03.dir/build.make prj.lab/lab03/CMakeFiles/task03.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/CMakeFiles --progress-num=11,12 "Built target task03"
+.PHONY : prj.lab/lab03/CMakeFiles/task03.dir/all
+
+# Build rule for subdir invocation for target.
+prj.lab/lab03/CMakeFiles/task03.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 prj.lab/lab03/CMakeFiles/task03.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/CMakeFiles 0
+.PHONY : prj.lab/lab03/CMakeFiles/task03.dir/rule
+
+# Convenience name for target.
+task03: prj.lab/lab03/CMakeFiles/task03.dir/rule
+.PHONY : task03
+
+# codegen rule for target.
+prj.lab/lab03/CMakeFiles/task03.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f prj.lab/lab03/CMakeFiles/task03.dir/build.make prj.lab/lab03/CMakeFiles/task03.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/CMakeFiles --progress-num=11,12 "Finished codegen for target task03"
+.PHONY : prj.lab/lab03/CMakeFiles/task03.dir/codegen
+
+# clean rule for target.
+prj.lab/lab03/CMakeFiles/task03.dir/clean:
+	$(MAKE) $(MAKESILENT) -f prj.lab/lab03/CMakeFiles/task03.dir/build.make prj.lab/lab03/CMakeFiles/task03.dir/clean
+.PHONY : prj.lab/lab03/CMakeFiles/task03.dir/clean
 
 #=============================================================================
 # Target rules for target prj.lab/semcv/CMakeFiles/semcv.dir

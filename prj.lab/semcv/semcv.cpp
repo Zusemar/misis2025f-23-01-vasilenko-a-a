@@ -204,3 +204,90 @@ PixelDistributionStats calc_distribution_stats(const cv::Mat& img, const cv::Mat
     s.maximum = mx;
     return s;
 }
+
+// --- Lab03: Бинаризация ---
+
+cv::Mat to_grayscale(const cv::Mat& img) {
+    if (img.channels() == 1) {
+        return img.clone();
+    }
+    cv::Mat gray;
+    if (img.channels() == 3) {
+        cv::cvtColor(img, gray, cv::COLOR_BGR2GRAY);
+    } else if (img.channels() == 4) {
+        cv::cvtColor(img, gray, cv::COLOR_BGRA2GRAY);
+    } else {
+        // fallback: берём первый канал
+        std::vector<cv::Mat> channels;
+        cv::split(img, channels);
+        gray = channels[0].clone();
+    }
+    return gray;
+}
+
+cv::Mat global_threshold(const cv::Mat& gray, double threshold, double maxval) {
+    CV_Assert(gray.type() == CV_8UC1);
+    cv::Mat binary;
+    cv::threshold(gray, binary, threshold, maxval, cv::THRESH_BINARY);
+    return binary;
+}
+
+cv::Mat overlay_mask(const cv::Mat& img, const cv::Mat& mask, 
+                     const cv::Scalar& mask_color, double alpha) {
+    CV_Assert(img.size() == mask.size());
+    CV_Assert(mask.type() == CV_8UC1);
+    
+    // Конвертируем исходное изображение в цветное (BGR), если нужно
+    cv::Mat img_color;
+    if (img.channels() == 1) {
+        cv::cvtColor(img, img_color, cv::COLOR_GRAY2BGR);
+    } else {
+        img_color = img.clone();
+    }
+    
+    // Создаём цветную маску
+    cv::Mat colored_mask;
+    cv::cvtColor(mask, colored_mask, cv::COLOR_GRAY2BGR);
+    colored_mask.setTo(mask_color, mask > 0);
+    
+    // Накладываем маску с прозрачностью
+    cv::Mat result;
+    cv::addWeighted(img_color, 1.0 - alpha, colored_mask, alpha, 0.0, result);
+    
+    return result;
+}
+
+// --- Lab03: Оценка качества бинаризации ---
+
+BinaryClassificationMetrics calc_binary_metrics(const cv::Mat& predicted_mask, 
+                                                 const cv::Mat& ground_truth_mask) {
+    CV_Assert(predicted_mask.size() == ground_truth_mask.size());
+    CV_Assert(predicted_mask.type() == CV_8UC1);
+    CV_Assert(ground_truth_mask.type() == CV_8UC1);
+    
+    BinaryClassificationMetrics m{};
+    
+    const int rows = predicted_mask.rows;
+    const int cols = predicted_mask.cols;
+    
+    for (int y = 0; y < rows; ++y) {
+        const uchar* pred = predicted_mask.ptr<uchar>(y);
+        const uchar* gt = ground_truth_mask.ptr<uchar>(y);
+        for (int x = 0; x < cols; ++x) {
+            bool pred_pos = (pred[x] > 0);
+            bool gt_pos = (gt[x] > 0);
+            
+            if (pred_pos && gt_pos) {
+                m.TP++;
+            } else if (pred_pos && !gt_pos) {
+                m.FP++;
+            } else if (!pred_pos && gt_pos) {
+                m.FN++;
+            } else {
+                m.TN++;
+            }
+        }
+    }
+    
+    return m;
+}

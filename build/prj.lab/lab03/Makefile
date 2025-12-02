@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/CMakeFiles /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	cd /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/CMakeFiles /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/prj.lab/lab03//CMakeFiles/progress.marks
+	cd /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 prj.lab/lab03/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 prj.lab/lab03/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,96 +103,56 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 prj.lab/lab03/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 prj.lab/lab03/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named task01-01
+# Convenience name for target.
+prj.lab/lab03/CMakeFiles/task03.dir/rule:
+	cd /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 prj.lab/lab03/CMakeFiles/task03.dir/rule
+.PHONY : prj.lab/lab03/CMakeFiles/task03.dir/rule
 
-# Build rule for target.
-task01-01: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 task01-01
-.PHONY : task01-01
-
-# fast build rule for target.
-task01-01/fast:
-	$(MAKE) $(MAKESILENT) -f prj.lab/lab01/CMakeFiles/task01-01.dir/build.make prj.lab/lab01/CMakeFiles/task01-01.dir/build
-.PHONY : task01-01/fast
-
-#=============================================================================
-# Target rules for targets named task01-02
-
-# Build rule for target.
-task01-02: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 task01-02
-.PHONY : task01-02
-
-# fast build rule for target.
-task01-02/fast:
-	$(MAKE) $(MAKESILENT) -f prj.lab/lab01/CMakeFiles/task01-02.dir/build.make prj.lab/lab01/CMakeFiles/task01-02.dir/build
-.PHONY : task01-02/fast
-
-#=============================================================================
-# Target rules for targets named task01-gen
-
-# Build rule for target.
-task01-gen: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 task01-gen
-.PHONY : task01-gen
-
-# fast build rule for target.
-task01-gen/fast:
-	$(MAKE) $(MAKESILENT) -f prj.lab/lab01/CMakeFiles/task01-gen.dir/build.make prj.lab/lab01/CMakeFiles/task01-gen.dir/build
-.PHONY : task01-gen/fast
-
-#=============================================================================
-# Target rules for targets named task02
-
-# Build rule for target.
-task02: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 task02
-.PHONY : task02
-
-# fast build rule for target.
-task02/fast:
-	$(MAKE) $(MAKESILENT) -f prj.lab/lab02/CMakeFiles/task02.dir/build.make prj.lab/lab02/CMakeFiles/task02.dir/build
-.PHONY : task02/fast
-
-#=============================================================================
-# Target rules for targets named task03
-
-# Build rule for target.
-task03: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 task03
+# Convenience name for target.
+task03: prj.lab/lab03/CMakeFiles/task03.dir/rule
 .PHONY : task03
 
 # fast build rule for target.
 task03/fast:
-	$(MAKE) $(MAKESILENT) -f prj.lab/lab03/CMakeFiles/task03.dir/build.make prj.lab/lab03/CMakeFiles/task03.dir/build
+	cd /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build && $(MAKE) $(MAKESILENT) -f prj.lab/lab03/CMakeFiles/task03.dir/build.make prj.lab/lab03/CMakeFiles/task03.dir/build
 .PHONY : task03/fast
 
-#=============================================================================
-# Target rules for targets named semcv
+task03.o: task03.cpp.o
+.PHONY : task03.o
 
-# Build rule for target.
-semcv: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 semcv
-.PHONY : semcv
+# target to build an object file
+task03.cpp.o:
+	cd /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build && $(MAKE) $(MAKESILENT) -f prj.lab/lab03/CMakeFiles/task03.dir/build.make prj.lab/lab03/CMakeFiles/task03.dir/task03.cpp.o
+.PHONY : task03.cpp.o
 
-# fast build rule for target.
-semcv/fast:
-	$(MAKE) $(MAKESILENT) -f prj.lab/semcv/CMakeFiles/semcv.dir/build.make prj.lab/semcv/CMakeFiles/semcv.dir/build
-.PHONY : semcv/fast
+task03.i: task03.cpp.i
+.PHONY : task03.i
+
+# target to preprocess a source file
+task03.cpp.i:
+	cd /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build && $(MAKE) $(MAKESILENT) -f prj.lab/lab03/CMakeFiles/task03.dir/build.make prj.lab/lab03/CMakeFiles/task03.dir/task03.cpp.i
+.PHONY : task03.cpp.i
+
+task03.s: task03.cpp.s
+.PHONY : task03.s
+
+# target to generate assembly for a file
+task03.cpp.s:
+	cd /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build && $(MAKE) $(MAKESILENT) -f prj.lab/lab03/CMakeFiles/task03.dir/build.make prj.lab/lab03/CMakeFiles/task03.dir/task03.cpp.s
+.PHONY : task03.cpp.s
 
 # Help Target
 help:
@@ -202,12 +162,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... semcv"
-	@echo "... task01-01"
-	@echo "... task01-02"
-	@echo "... task01-gen"
-	@echo "... task02"
 	@echo "... task03"
+	@echo "... task03.o"
+	@echo "... task03.i"
+	@echo "... task03.s"
 .PHONY : help
 
 
@@ -219,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

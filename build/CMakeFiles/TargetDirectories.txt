@@ -10,6 +10,9 @@
 /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/prj.lab/lab02/CMakeFiles/task02.dir
 /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/prj.lab/lab02/CMakeFiles/edit_cache.dir
 /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/prj.lab/lab02/CMakeFiles/rebuild_cache.dir
+/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/prj.lab/lab03/CMakeFiles/task03.dir
+/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/prj.lab/lab03/CMakeFiles/edit_cache.dir
+/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/prj.lab/lab03/CMakeFiles/rebuild_cache.dir
 /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/prj.lab/semcv/CMakeFiles/semcv.dir
 /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/prj.lab/semcv/CMakeFiles/edit_cache.dir
 /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/prj.lab/semcv/CMakeFiles/rebuild_cache.dir
