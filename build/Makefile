@@ -182,6 +182,45 @@ task03/fast:
 .PHONY : task03/fast
 
 #=============================================================================
+# Target rules for targets named task04
+
+# Build rule for target.
+task04: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 task04
+.PHONY : task04
+
+# fast build rule for target.
+task04/fast:
+	$(MAKE) $(MAKESILENT) -f prj.lab/lab04/CMakeFiles/task04.dir/build.make prj.lab/lab04/CMakeFiles/task04.dir/build
+.PHONY : task04/fast
+
+#=============================================================================
+# Target rules for targets named task05
+
+# Build rule for target.
+task05: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 task05
+.PHONY : task05
+
+# fast build rule for target.
+task05/fast:
+	$(MAKE) $(MAKESILENT) -f prj.lab/lab05/CMakeFiles/task05.dir/build.make prj.lab/lab05/CMakeFiles/task05.dir/build
+.PHONY : task05/fast
+
+#=============================================================================
+# Target rules for targets named task06
+
+# Build rule for target.
+task06: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 task06
+.PHONY : task06
+
+# fast build rule for target.
+task06/fast:
+	$(MAKE) $(MAKESILENT) -f prj.lab/lab06/CMakeFiles/task06.dir/build.make prj.lab/lab06/CMakeFiles/task06.dir/build
+.PHONY : task06/fast
+
+#=============================================================================
 # Target rules for targets named semcv
 
 # Build rule for target.
@@ -208,6 +247,9 @@ help:
 	@echo "... task01-gen"
 	@echo "... task02"
 	@echo "... task03"
+	@echo "... task04"
+	@echo "... task05"
+	@echo "... task06"
 .PHONY : help
 
 

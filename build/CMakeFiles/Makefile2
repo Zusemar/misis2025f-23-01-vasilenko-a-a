@@ -85,6 +85,9 @@ clean: prj.lab/clean
 prj.lab/all: prj.lab/lab01/all
 prj.lab/all: prj.lab/lab02/all
 prj.lab/all: prj.lab/lab03/all
+prj.lab/all: prj.lab/lab04/all
+prj.lab/all: prj.lab/lab05/all
+prj.lab/all: prj.lab/lab06/all
 prj.lab/all: prj.lab/semcv/all
 .PHONY : prj.lab/all
 
@@ -92,6 +95,9 @@ prj.lab/all: prj.lab/semcv/all
 prj.lab/codegen: prj.lab/lab01/codegen
 prj.lab/codegen: prj.lab/lab02/codegen
 prj.lab/codegen: prj.lab/lab03/codegen
+prj.lab/codegen: prj.lab/lab04/codegen
+prj.lab/codegen: prj.lab/lab05/codegen
+prj.lab/codegen: prj.lab/lab06/codegen
 prj.lab/codegen: prj.lab/semcv/codegen
 .PHONY : prj.lab/codegen
 
@@ -99,6 +105,9 @@ prj.lab/codegen: prj.lab/semcv/codegen
 prj.lab/preinstall: prj.lab/lab01/preinstall
 prj.lab/preinstall: prj.lab/lab02/preinstall
 prj.lab/preinstall: prj.lab/lab03/preinstall
+prj.lab/preinstall: prj.lab/lab04/preinstall
+prj.lab/preinstall: prj.lab/lab05/preinstall
+prj.lab/preinstall: prj.lab/lab06/preinstall
 prj.lab/preinstall: prj.lab/semcv/preinstall
 .PHONY : prj.lab/preinstall
 
@@ -106,6 +115,9 @@ prj.lab/preinstall: prj.lab/semcv/preinstall
 prj.lab/clean: prj.lab/lab01/clean
 prj.lab/clean: prj.lab/lab02/clean
 prj.lab/clean: prj.lab/lab03/clean
+prj.lab/clean: prj.lab/lab04/clean
+prj.lab/clean: prj.lab/lab05/clean
+prj.lab/clean: prj.lab/lab06/clean
 prj.lab/clean: prj.lab/semcv/clean
 .PHONY : prj.lab/clean
 
@@ -171,6 +183,63 @@ prj.lab/lab03/preinstall:
 # Recursive "clean" directory target.
 prj.lab/lab03/clean: prj.lab/lab03/CMakeFiles/task03.dir/clean
 .PHONY : prj.lab/lab03/clean
+
+#=============================================================================
+# Directory level rules for directory prj.lab/lab04
+
+# Recursive "all" directory target.
+prj.lab/lab04/all: prj.lab/lab04/CMakeFiles/task04.dir/all
+.PHONY : prj.lab/lab04/all
+
+# Recursive "codegen" directory target.
+prj.lab/lab04/codegen: prj.lab/lab04/CMakeFiles/task04.dir/codegen
+.PHONY : prj.lab/lab04/codegen
+
+# Recursive "preinstall" directory target.
+prj.lab/lab04/preinstall:
+.PHONY : prj.lab/lab04/preinstall
+
+# Recursive "clean" directory target.
+prj.lab/lab04/clean: prj.lab/lab04/CMakeFiles/task04.dir/clean
+.PHONY : prj.lab/lab04/clean
+
+#=============================================================================
+# Directory level rules for directory prj.lab/lab05
+
+# Recursive "all" directory target.
+prj.lab/lab05/all: prj.lab/lab05/CMakeFiles/task05.dir/all
+.PHONY : prj.lab/lab05/all
+
+# Recursive "codegen" directory target.
+prj.lab/lab05/codegen: prj.lab/lab05/CMakeFiles/task05.dir/codegen
+.PHONY : prj.lab/lab05/codegen
+
+# Recursive "preinstall" directory target.
+prj.lab/lab05/preinstall:
+.PHONY : prj.lab/lab05/preinstall
+
+# Recursive "clean" directory target.
+prj.lab/lab05/clean: prj.lab/lab05/CMakeFiles/task05.dir/clean
+.PHONY : prj.lab/lab05/clean
+
+#=============================================================================
+# Directory level rules for directory prj.lab/lab06
+
+# Recursive "all" directory target.
+prj.lab/lab06/all: prj.lab/lab06/CMakeFiles/task06.dir/all
+.PHONY : prj.lab/lab06/all
+
+# Recursive "codegen" directory target.
+prj.lab/lab06/codegen: prj.lab/lab06/CMakeFiles/task06.dir/codegen
+.PHONY : prj.lab/lab06/codegen
+
+# Recursive "preinstall" directory target.
+prj.lab/lab06/preinstall:
+.PHONY : prj.lab/lab06/preinstall
+
+# Recursive "clean" directory target.
+prj.lab/lab06/clean: prj.lab/lab06/CMakeFiles/task06.dir/clean
+.PHONY : prj.lab/lab06/clean
 
 #=============================================================================
 # Directory level rules for directory prj.lab/semcv
@@ -350,6 +419,102 @@ prj.lab/lab03/CMakeFiles/task03.dir/codegen:
 prj.lab/lab03/CMakeFiles/task03.dir/clean:
 	$(MAKE) $(MAKESILENT) -f prj.lab/lab03/CMakeFiles/task03.dir/build.make prj.lab/lab03/CMakeFiles/task03.dir/clean
 .PHONY : prj.lab/lab03/CMakeFiles/task03.dir/clean
+
+#=============================================================================
+# Target rules for target prj.lab/lab04/CMakeFiles/task04.dir
+
+# All Build rule for target.
+prj.lab/lab04/CMakeFiles/task04.dir/all: prj.lab/semcv/CMakeFiles/semcv.dir/all
+	$(MAKE) $(MAKESILENT) -f prj.lab/lab04/CMakeFiles/task04.dir/build.make prj.lab/lab04/CMakeFiles/task04.dir/depend
+	$(MAKE) $(MAKESILENT) -f prj.lab/lab04/CMakeFiles/task04.dir/build.make prj.lab/lab04/CMakeFiles/task04.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/CMakeFiles --progress-num=13,14 "Built target task04"
+.PHONY : prj.lab/lab04/CMakeFiles/task04.dir/all
+
+# Build rule for subdir invocation for target.
+prj.lab/lab04/CMakeFiles/task04.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 prj.lab/lab04/CMakeFiles/task04.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/CMakeFiles 0
+.PHONY : prj.lab/lab04/CMakeFiles/task04.dir/rule
+
+# Convenience name for target.
+task04: prj.lab/lab04/CMakeFiles/task04.dir/rule
+.PHONY : task04
+
+# codegen rule for target.
+prj.lab/lab04/CMakeFiles/task04.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f prj.lab/lab04/CMakeFiles/task04.dir/build.make prj.lab/lab04/CMakeFiles/task04.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/CMakeFiles --progress-num=13,14 "Finished codegen for target task04"
+.PHONY : prj.lab/lab04/CMakeFiles/task04.dir/codegen
+
+# clean rule for target.
+prj.lab/lab04/CMakeFiles/task04.dir/clean:
+	$(MAKE) $(MAKESILENT) -f prj.lab/lab04/CMakeFiles/task04.dir/build.make prj.lab/lab04/CMakeFiles/task04.dir/clean
+.PHONY : prj.lab/lab04/CMakeFiles/task04.dir/clean
+
+#=============================================================================
+# Target rules for target prj.lab/lab05/CMakeFiles/task05.dir
+
+# All Build rule for target.
+prj.lab/lab05/CMakeFiles/task05.dir/all: prj.lab/semcv/CMakeFiles/semcv.dir/all
+	$(MAKE) $(MAKESILENT) -f prj.lab/lab05/CMakeFiles/task05.dir/build.make prj.lab/lab05/CMakeFiles/task05.dir/depend
+	$(MAKE) $(MAKESILENT) -f prj.lab/lab05/CMakeFiles/task05.dir/build.make prj.lab/lab05/CMakeFiles/task05.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/CMakeFiles --progress-num=15,16 "Built target task05"
+.PHONY : prj.lab/lab05/CMakeFiles/task05.dir/all
+
+# Build rule for subdir invocation for target.
+prj.lab/lab05/CMakeFiles/task05.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 prj.lab/lab05/CMakeFiles/task05.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/CMakeFiles 0
+.PHONY : prj.lab/lab05/CMakeFiles/task05.dir/rule
+
+# Convenience name for target.
+task05: prj.lab/lab05/CMakeFiles/task05.dir/rule
+.PHONY : task05
+
+# codegen rule for target.
+prj.lab/lab05/CMakeFiles/task05.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f prj.lab/lab05/CMakeFiles/task05.dir/build.make prj.lab/lab05/CMakeFiles/task05.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/CMakeFiles --progress-num=15,16 "Finished codegen for target task05"
+.PHONY : prj.lab/lab05/CMakeFiles/task05.dir/codegen
+
+# clean rule for target.
+prj.lab/lab05/CMakeFiles/task05.dir/clean:
+	$(MAKE) $(MAKESILENT) -f prj.lab/lab05/CMakeFiles/task05.dir/build.make prj.lab/lab05/CMakeFiles/task05.dir/clean
+.PHONY : prj.lab/lab05/CMakeFiles/task05.dir/clean
+
+#=============================================================================
+# Target rules for target prj.lab/lab06/CMakeFiles/task06.dir
+
+# All Build rule for target.
+prj.lab/lab06/CMakeFiles/task06.dir/all: prj.lab/semcv/CMakeFiles/semcv.dir/all
+	$(MAKE) $(MAKESILENT) -f prj.lab/lab06/CMakeFiles/task06.dir/build.make prj.lab/lab06/CMakeFiles/task06.dir/depend
+	$(MAKE) $(MAKESILENT) -f prj.lab/lab06/CMakeFiles/task06.dir/build.make prj.lab/lab06/CMakeFiles/task06.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/CMakeFiles --progress-num=17,18 "Built target task06"
+.PHONY : prj.lab/lab06/CMakeFiles/task06.dir/all
+
+# Build rule for subdir invocation for target.
+prj.lab/lab06/CMakeFiles/task06.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 prj.lab/lab06/CMakeFiles/task06.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/CMakeFiles 0
+.PHONY : prj.lab/lab06/CMakeFiles/task06.dir/rule
+
+# Convenience name for target.
+task06: prj.lab/lab06/CMakeFiles/task06.dir/rule
+.PHONY : task06
+
+# codegen rule for target.
+prj.lab/lab06/CMakeFiles/task06.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f prj.lab/lab06/CMakeFiles/task06.dir/build.make prj.lab/lab06/CMakeFiles/task06.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/CMakeFiles --progress-num=17,18 "Finished codegen for target task06"
+.PHONY : prj.lab/lab06/CMakeFiles/task06.dir/codegen
+
+# clean rule for target.
+prj.lab/lab06/CMakeFiles/task06.dir/clean:
+	$(MAKE) $(MAKESILENT) -f prj.lab/lab06/CMakeFiles/task06.dir/build.make prj.lab/lab06/CMakeFiles/task06.dir/clean
+.PHONY : prj.lab/lab06/CMakeFiles/task06.dir/clean
 
 #=============================================================================
 # Target rules for target prj.lab/semcv/CMakeFiles/semcv.dir

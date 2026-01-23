@@ -990,4 +990,6 @@ prj.lab/lab01/CMakeFiles/task01-01.dir/task01-01.cpp.o: \
   /opt/homebrew/Cellar/opencv/4.12.0_10/include/opencv4/opencv2/core/utility.hpp \
   /opt/homebrew/Cellar/opencv/4.12.0_10/include/opencv4/opencv2/core/optim.hpp \
   /opt/homebrew/Cellar/opencv/4.12.0_10/include/opencv4/opencv2/core/ovx.hpp \
-  /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/prj.lab/semcv/semcv.hpp
+  /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/prj.lab/semcv/semcv.hpp \
+  /opt/homebrew/Cellar/opencv/4.12.0_10/include/opencv4/opencv2/imgproc.hpp \
+  /opt/homebrew/Cellar/opencv/4.12.0_10/include/opencv4/opencv2/./imgproc/segmentation.hpp

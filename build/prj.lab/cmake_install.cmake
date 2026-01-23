@@ -54,6 +54,21 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/prj.lab/lab04/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/prj.lab/lab05/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/prj.lab/lab06/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/prj.lab/semcv/cmake_install.cmake")
 endif()
 

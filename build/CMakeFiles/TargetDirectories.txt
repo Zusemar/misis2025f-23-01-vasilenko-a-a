@@ -13,6 +13,15 @@
 /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/prj.lab/lab03/CMakeFiles/task03.dir
 /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/prj.lab/lab03/CMakeFiles/edit_cache.dir
 /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/prj.lab/lab03/CMakeFiles/rebuild_cache.dir
+/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/prj.lab/lab04/CMakeFiles/task04.dir
+/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/prj.lab/lab04/CMakeFiles/edit_cache.dir
+/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/prj.lab/lab04/CMakeFiles/rebuild_cache.dir
+/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/prj.lab/lab05/CMakeFiles/task05.dir
+/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/prj.lab/lab05/CMakeFiles/edit_cache.dir
+/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/prj.lab/lab05/CMakeFiles/rebuild_cache.dir
+/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/prj.lab/lab06/CMakeFiles/task06.dir
+/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/prj.lab/lab06/CMakeFiles/edit_cache.dir
+/Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/prj.lab/lab06/CMakeFiles/rebuild_cache.dir
 /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/prj.lab/semcv/CMakeFiles/semcv.dir
 /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/prj.lab/semcv/CMakeFiles/edit_cache.dir
 /Users/alex/Documents/misis2025f-23-01-vasilenko-a-a/build/prj.lab/semcv/CMakeFiles/rebuild_cache.dir
