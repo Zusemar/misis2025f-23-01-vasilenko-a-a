@@ -1,0 +1,60 @@
+{
+  "version": "0.1",
+  "status": "agent_assisted_draft_visually_reviewed",
+  "author": "Codex, visual review of original CT sections",
+  "coordinates": "x,y; origin at upper-left; original 501x501 pixels",
+  "classes": {"0": "air_background", "1": "shell_and_visible_hard_septa", "2": "kernel"},
+  "palette": {"0": "#111827", "1": "#F2AD48", "2": "#38BDF8"},
+  "assistance": {
+    "material_level": 0.017,
+    "component_level": 0.022,
+    "max_edge_extension_pixels": 4,
+    "description": "Manually identified kernel components and enclosing polygons, with intensity-assisted pixel contours. This is annotation assistance, not the project segmentation algorithm or independent expert ground truth."
+  },
+  "images": {
+    "0130": {
+      "kernel_seeds": [[189,147],[269,186],[179,225],[331,205]],
+      "kernel_envelopes": [
+        [[140,294],[164,282],[200,277],[235,281],[244,295],[248,322],[246,348],[211,358],[193,340],[176,340],[154,351],[137,347],[136,316]],
+        [[249,291],[257,274],[276,258],[302,254],[338,265],[366,280],[371,304],[352,314],[331,311],[317,314],[318,325],[330,338],[317,350],[290,337],[283,355],[265,360],[254,346]],
+        [[299,236],[317,226],[338,236],[362,247],[368,259],[363,269],[342,271],[319,258],[298,247]]
+      ],
+      "shell_strokes": [
+        {"width": 4, "points": [[220,244],[227,236],[252,234],[274,230],[295,225]]},
+        {"width": 3, "points": [[205,144],[213,170],[219,194],[225,217],[225,232]]}
+      ],
+      "note": "Seven visible kernel profiles; three profiles touch shell/septa at the helper threshold and are separated by manually placed envelopes."
+    },
+    "0230": {"kernel_seeds": [[187,172],[291,242],[192,261],[224,345]], "kernel_envelopes": []},
+    "0330": {"kernel_seeds": [[289,191],[203,209],[254,260],[311,315],[186,296],[234,337]], "kernel_envelopes": [], "shell_strokes": [{"width": 3, "points": [[223,135],[231,155],[239,181],[244,205],[229,220]]}]},
+    "0430": {"kernel_seeds": [], "kernel_envelopes": [], "note": "Shell tip and septa; no confidently visible kernel."},
+    "1130": {"kernel_seeds": [[244,163],[198,183],[200,219],[260,239]], "kernel_envelopes": []},
+    "1230": {
+      "kernel_seeds": [[306,226],[196,309]],
+      "kernel_envelopes": [
+        [[97,145],[122,129],[125,113],[156,105],[174,91],[193,88],[212,96],[222,115],[226,139],[218,161],[201,176],[192,189],[196,203],[171,205],[150,214],[116,212],[99,192],[94,170]]
+      ],
+      "note": "Upper-left kernel touches the shell under the helper threshold; central fibrous hard partition is assigned shell."
+    },
+    "1330": {
+      "kernel_seeds": [[208,232]],
+      "kernel_envelopes": [
+        [[251,104],[265,99],[283,119],[296,149],[302,175],[316,192],[330,205],[328,224],[310,245],[309,251],[328,254],[337,267],[330,288],[323,309],[316,346],[307,368],[288,376],[278,366],[268,334],[265,300],[263,250],[259,200],[251,147]],
+        [[281,97],[302,96],[322,120],[329,144],[318,154],[298,150],[283,131]]
+      ],
+      "note": "Right kernel and small upper-right profile separated from the hard central partition by manually placed envelopes."
+    },
+    "1430": {"empty": true, "kernel_seeds": [], "kernel_envelopes": [], "note": "No walnut tissue is visible; support and reconstruction texture belong to background."},
+    "2130": {"kernel_seeds": [[228,168],[329,171]], "kernel_envelopes": []},
+    "2230": {
+      "kernel_seeds": [[344,181],[169,140],[265,287],[330,330]],
+      "kernel_envelopes": [
+        [[181,275],[198,267],[208,277],[211,301],[217,324],[231,350],[240,368],[239,386],[226,403],[201,402],[185,387],[177,353],[167,329],[160,309],[169,291]]
+      ],
+      "shell_strokes": [{"width": 4, "points": [[241,249],[235,261],[230,275],[226,291],[229,310],[238,323]]}],
+      "note": "Lower-left kernel is separated from the nearby longitudinal hard partition using a manual envelope."
+    },
+    "2330": {"kernel_seeds": [[242,172],[297,298],[191,314]], "kernel_envelopes": [], "note": "The thin folded structure against the left shell is treated as a hard partition, not kernel."},
+    "2430": {"empty": true, "kernel_seeds": [], "kernel_envelopes": [], "note": "No walnut tissue is visible; support and reconstruction texture belong to background."}
+  }
+}

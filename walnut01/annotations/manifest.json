@@ -1,0 +1,168 @@
+{
+  "version": "0.1",
+  "status": "agent_assisted_draft_visually_reviewed",
+  "source_commit": "5e7d4a2d3b07244be972243acca1a6f6a8ccc2b9",
+  "labels": {
+    "0": "air_background",
+    "1": "shell_and_visible_hard_septa",
+    "2": "kernel"
+  },
+  "images": [
+    {
+      "id": "0130",
+      "file": "walnut01.0130.tif",
+      "sha256": "411064a1b4fc7307f2a6889139b9d45aba4448a13c622de94db348dc4aa16456",
+      "mask": "masks/walnut01.0130.png",
+      "counts": {
+        "0": 208912,
+        "1": 17245,
+        "2": 24844
+      },
+      "empty": false,
+      "review_note": "Seven visible kernel profiles; three profiles touch shell/septa at the helper threshold and are separated by manually placed envelopes."
+    },
+    {
+      "id": "0230",
+      "file": "walnut01.0230.tif",
+      "sha256": "62969ccb0197e33be8dce2599ddf0079611c956d0c4e04cc7fc458d6d699baa2",
+      "mask": "masks/walnut01.0230.png",
+      "counts": {
+        "0": 208625,
+        "1": 18541,
+        "2": 23835
+      },
+      "empty": false,
+      "review_note": ""
+    },
+    {
+      "id": "0330",
+      "file": "walnut01.0330.tif",
+      "sha256": "b17347d226f2dbaab5828092294da658dcab2e2e5540600024796144813f7cc2",
+      "mask": "masks/walnut01.0330.png",
+      "counts": {
+        "0": 216173,
+        "1": 15376,
+        "2": 19452
+      },
+      "empty": false,
+      "review_note": ""
+    },
+    {
+      "id": "0430",
+      "file": "walnut01.0430.tif",
+      "sha256": "d38b6c1e442a9f8ca888e37d87539d0533445dd291f3209fc34f485f747fba2f",
+      "mask": "masks/walnut01.0430.png",
+      "counts": {
+        "0": 241032,
+        "1": 9969,
+        "2": 0
+      },
+      "empty": false,
+      "review_note": "Shell tip and septa; no confidently visible kernel."
+    },
+    {
+      "id": "1130",
+      "file": "walnut01.1130.tif",
+      "sha256": "19e5986a2dc4a99eae236f20898559a277eeccb2a28da18d068f02f5ba52cea8",
+      "mask": "masks/walnut01.1130.png",
+      "counts": {
+        "0": 231217,
+        "1": 17261,
+        "2": 2523
+      },
+      "empty": false,
+      "review_note": ""
+    },
+    {
+      "id": "1230",
+      "file": "walnut01.1230.tif",
+      "sha256": "e79aa5864b2befba2ebff402ce097af906edfa64048d6e5c46a9da21886e2fca",
+      "mask": "masks/walnut01.1230.png",
+      "counts": {
+        "0": 193726,
+        "1": 26664,
+        "2": 30611
+      },
+      "empty": false,
+      "review_note": "Upper-left kernel touches the shell under the helper threshold; central fibrous hard partition is assigned shell."
+    },
+    {
+      "id": "1330",
+      "file": "walnut01.1330.tif",
+      "sha256": "a5594d8b38cf1196ae4acb4bbe59004fe63424a8c345dcad8c69f63c6298f991",
+      "mask": "masks/walnut01.1330.png",
+      "counts": {
+        "0": 202898,
+        "1": 17274,
+        "2": 30829
+      },
+      "empty": false,
+      "review_note": "Right kernel and small upper-right profile separated from the hard central partition by manually placed envelopes."
+    },
+    {
+      "id": "1430",
+      "file": "walnut01.1430.tif",
+      "sha256": "c72f615f3ec260403a0f86542bb938950b012dc29fc748eb5f0ece4226a378c4",
+      "mask": "masks/walnut01.1430.png",
+      "counts": {
+        "0": 251001,
+        "1": 0,
+        "2": 0
+      },
+      "empty": true,
+      "review_note": "No walnut tissue is visible; support and reconstruction texture belong to background."
+    },
+    {
+      "id": "2130",
+      "file": "walnut01.2130.tif",
+      "sha256": "4bba1d315cde100314259e101a51aa83439a3bb144dc28a1751af9edb8ad2faf",
+      "mask": "masks/walnut01.2130.png",
+      "counts": {
+        "0": 226451,
+        "1": 20296,
+        "2": 4254
+      },
+      "empty": false,
+      "review_note": ""
+    },
+    {
+      "id": "2230",
+      "file": "walnut01.2230.tif",
+      "sha256": "197b069af1416bcdea6e11647810bb950348f6f75c6f44e563f0b3fce1372041",
+      "mask": "masks/walnut01.2230.png",
+      "counts": {
+        "0": 196645,
+        "1": 23752,
+        "2": 30604
+      },
+      "empty": false,
+      "review_note": "Lower-left kernel is separated from the nearby longitudinal hard partition using a manual envelope."
+    },
+    {
+      "id": "2330",
+      "file": "walnut01.2330.tif",
+      "sha256": "6dd7efa5b3e52002c868db59a35b321ca9bb2ce67e3722a549c827dc5db524dd",
+      "mask": "masks/walnut01.2330.png",
+      "counts": {
+        "0": 210236,
+        "1": 20959,
+        "2": 19806
+      },
+      "empty": false,
+      "review_note": "The thin folded structure against the left shell is treated as a hard partition, not kernel."
+    },
+    {
+      "id": "2430",
+      "file": "walnut01.2430.tif",
+      "sha256": "04c304e0655a62f782c20f688ee38765d4facc6bcae6eec20cc9932d3b8baa17",
+      "mask": "masks/walnut01.2430.png",
+      "counts": {
+        "0": 251001,
+        "1": 0,
+        "2": 0
+      },
+      "empty": true,
+      "review_note": "No walnut tissue is visible; support and reconstruction texture belong to background."
+    }
+  ]
+}
