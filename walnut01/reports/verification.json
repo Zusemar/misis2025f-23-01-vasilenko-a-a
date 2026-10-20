@@ -1,0 +1,55 @@
+{
+  "status": "passed",
+  "date": "2026-10-20",
+  "code_results_commit": "67e83ccc96e7eeddc1f27dbc0c364e621f5f3b7c",
+  "pages": 24,
+  "tables": 8,
+  "figures": 20,
+  "native_equations": 8,
+  "pdf_links": 13,
+  "verified_frozen_inputs": 52,
+  "visual_review": {
+    "pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checked": [
+      "layout",
+      "readability",
+      "captions",
+      "tables",
+      "equations",
+      "page_numbers",
+      "annotation_pairs"
+    ],
+    "result": "All final rendered pages inspected; no clipping or overlapping content."
+  },
+  "files_sha256": {
+    "walnut_project_report.docx": "44dc39b2f5654f807527e6faf6a8d07ce11cb26fcf3baa3a7388baec9dc2ff28",
+    "walnut_project_report.pdf": "15b2f41b883398cd2c0d9c3de6a94f89fcf7ff409921c33135c4c09a1a423fb9",
+    "build_report.py": "cd55a3c041b843939fa6f1c4d87e138afbbf88775a6eb330df550e3df467f7dc",
+    "frozen_inputs.json": "33991fa0d8bdd3d824b36c1ba7c9394e3ad173db49ff410640c82f54cac03312"
+  }
+}

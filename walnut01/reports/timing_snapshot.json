@@ -1,0 +1,91 @@
+{
+  "code_commit": "67e83ccc96e7eeddc1f27dbc0c364e621f5f3b7c",
+  "description": "One recorded run; compute time only; OpenCV one thread; not a general benchmark",
+  "images": [
+    {
+      "image": "walnut01.0130",
+      "air_threshold": "0.01865490196",
+      "shell_threshold": "0.04676862745",
+      "empty": "0",
+      "milliseconds": "22.523291"
+    },
+    {
+      "image": "walnut01.0230",
+      "air_threshold": "0.01865490196",
+      "shell_threshold": "0.04650588235",
+      "empty": "0",
+      "milliseconds": "21.288125"
+    },
+    {
+      "image": "walnut01.0330",
+      "air_threshold": "0.01891764706",
+      "shell_threshold": "0.04703137255",
+      "empty": "0",
+      "milliseconds": "19.344541"
+    },
+    {
+      "image": "walnut01.0430",
+      "air_threshold": "0.01471372549",
+      "shell_threshold": "0.04282745098",
+      "empty": "0",
+      "milliseconds": "12.771167"
+    },
+    {
+      "image": "walnut01.1130",
+      "air_threshold": "0.01681568627",
+      "shell_threshold": "0.04466666667",
+      "empty": "0",
+      "milliseconds": "15.315542"
+    },
+    {
+      "image": "walnut01.1230",
+      "air_threshold": "0.01918039216",
+      "shell_threshold": "0.04598039216",
+      "empty": "0",
+      "milliseconds": "23.857792"
+    },
+    {
+      "image": "walnut01.1330",
+      "air_threshold": "0.01918039216",
+      "shell_threshold": "0.04729411765",
+      "empty": "0",
+      "milliseconds": "20.900458"
+    },
+    {
+      "image": "walnut01.1430",
+      "air_threshold": "0",
+      "shell_threshold": "0",
+      "empty": "1",
+      "milliseconds": "0.292208"
+    },
+    {
+      "image": "walnut01.2130",
+      "air_threshold": "0.01734117647",
+      "shell_threshold": "0.04492941176",
+      "empty": "0",
+      "milliseconds": "15.99575"
+    },
+    {
+      "image": "walnut01.2230",
+      "air_threshold": "0.01865490196",
+      "shell_threshold": "0.04676862745",
+      "empty": "0",
+      "milliseconds": "23.946875"
+    },
+    {
+      "image": "walnut01.2330",
+      "air_threshold": "0.01865490196",
+      "shell_threshold": "0.04676862745",
+      "empty": "0",
+      "milliseconds": "20.056416"
+    },
+    {
+      "image": "walnut01.2430",
+      "air_threshold": "0",
+      "shell_threshold": "0",
+      "empty": "1",
+      "milliseconds": "0.293333"
+    }
+  ],
+  "mean_compute_ms": 16.382124833333332
+}
