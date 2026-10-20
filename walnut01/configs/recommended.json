@@ -1,0 +1,6 @@
+{
+  "method": "regions",
+  "filter": "none",
+  "air_factor": 1.0,
+  "core_radius": 2
+}

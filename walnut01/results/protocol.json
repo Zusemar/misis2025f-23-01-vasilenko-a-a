@@ -1,0 +1,37 @@
+{
+  "development": [
+    "0130",
+    "1230",
+    "1430",
+    "2130"
+  ],
+  "control": [
+    "0230",
+    "0330",
+    "0430",
+    "1130",
+    "1330",
+    "2230",
+    "2330",
+    "2430"
+  ],
+  "selection_metric": "pooled mean IoU of shell and kernel on development only",
+  "annotation_version": "0.1",
+  "annotation_commit": "be5ecd2",
+  "boundary_tolerance_pixels": 1,
+  "limitations": "One walnut; agent-assisted annotations; control sections can intersect development sections in the same object. No independent-object generalization claim.",
+  "label_sha256": {
+    "0130": "706b8323a7b38784212f63c1adf9d7ed64c02328f0f4ab4966fcb35873b7f12f",
+    "1230": "41538790dfe95c9e17186f880645d5224f35a3ac6a4719ee4e0b961903b1ffa3",
+    "1430": "10b2eb5c80de56d3641aa6e6685784a85cfa07140197f2a3eae24ad31bc9a9b7",
+    "2130": "c604fe64c93a874a903762af615009f7ae2c43f86908a5d761141118b53ee14f",
+    "0230": "33086a6e7d469c4712b503b02f62e6529395714c15fc0447a9142745b43dd4e8",
+    "0330": "14c4e455aed353be5fc9588c5781a83c8f13343a8d72e5c2eb43cc50d66238c7",
+    "0430": "aa851b3375a183ec88c230a7d401f53ca4a4017d237eac4c6d59cdd3855d584e",
+    "1130": "082524ac4e4be0a48050b00e2ca3653527c6a8e37890f5258ae5eaaedfc04f40",
+    "1330": "ec009b2292be29111d0c4327e8a996f8fd4f82079f489fd12baf312b461660e5",
+    "2230": "79ea6f02646f80666f842d0126eb40306289d0ef9153ffcbdda1dfed433eba51",
+    "2330": "86da8840c78551cda537284d7c70bd2ea39712caa0cbdd379fe184b13257ccec",
+    "2430": "10b2eb5c80de56d3641aa6e6685784a85cfa07140197f2a3eae24ad31bc9a9b7"
+  }
+}

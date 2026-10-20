@@ -1,0 +1,68 @@
+{
+  "none_threshold": {
+    "config": {
+      "method": "threshold",
+      "filter": "none",
+      "air_factor": 1.2,
+      "core_radius": 3
+    },
+    "development_foreground_miou": 0.6328628031498422,
+    "trial": 18
+  },
+  "gaussian_threshold": {
+    "config": {
+      "method": "threshold",
+      "filter": "gaussian",
+      "sigma": 0.7,
+      "air_factor": 1.2,
+      "core_radius": 3
+    },
+    "development_foreground_miou": 0.6231170232121712,
+    "trial": 19
+  },
+  "guided_threshold": {
+    "config": {
+      "method": "threshold",
+      "filter": "guided",
+      "radius": 2,
+      "epsilon": 0.003,
+      "air_factor": 1.2,
+      "core_radius": 3
+    },
+    "development_foreground_miou": 0.635876201394772,
+    "trial": 23
+  },
+  "none_regions": {
+    "config": {
+      "method": "regions",
+      "filter": "none",
+      "air_factor": 1.0,
+      "core_radius": 2
+    },
+    "development_foreground_miou": 0.9272986401493284,
+    "trial": 54
+  },
+  "gaussian_regions": {
+    "config": {
+      "method": "regions",
+      "filter": "gaussian",
+      "sigma": 0.7,
+      "air_factor": 1.2,
+      "core_radius": 2
+    },
+    "development_foreground_miou": 0.9076463107758618,
+    "trial": 82
+  },
+  "guided_regions": {
+    "config": {
+      "method": "regions",
+      "filter": "guided",
+      "radius": 2,
+      "epsilon": 0.0003,
+      "air_factor": 1.0,
+      "core_radius": 2
+    },
+    "development_foreground_miou": 0.9272288924306051,
+    "trial": 57
+  }
+}

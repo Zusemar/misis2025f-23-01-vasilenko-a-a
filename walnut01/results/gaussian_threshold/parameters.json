@@ -1,0 +1,18 @@
+{
+    "filter": "gaussian",
+    "method": "threshold",
+    "intensity_scale": 0.067000000000000004,
+    "radius": 4,
+    "epsilon": 0.001,
+    "sigma": 0.69999999999999996,
+    "air_factor": 1.2,
+    "minimum_material": 0.012,
+    "empty_peak": 0.012,
+    "core_radius": 3,
+    "min_core_area": 4,
+    "min_kernel_level": 0.40000000000000002,
+    "max_texture": 0.10000000000000001,
+    "edge_weight": 10.0,
+    "opencv_version": "4.13.0",
+    "opencv_threads": 1
+}

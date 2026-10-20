@@ -1,0 +1,8 @@
+{
+  "method": "threshold",
+  "filter": "guided",
+  "radius": 2,
+  "epsilon": 0.003,
+  "air_factor": 1.2,
+  "core_radius": 3
+}

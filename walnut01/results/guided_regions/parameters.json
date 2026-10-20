@@ -1,0 +1,18 @@
+{
+    "filter": "guided",
+    "method": "regions",
+    "intensity_scale": 0.067000000000000004,
+    "radius": 2,
+    "epsilon": 0.00029999999999999997,
+    "sigma": 1.0,
+    "air_factor": 1.0,
+    "minimum_material": 0.012,
+    "empty_peak": 0.012,
+    "core_radius": 2,
+    "min_core_area": 4,
+    "min_kernel_level": 0.40000000000000002,
+    "max_texture": 0.10000000000000001,
+    "edge_weight": 10.0,
+    "opencv_version": "4.13.0",
+    "opencv_threads": 1
+}

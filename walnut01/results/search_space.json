@@ -1,0 +1,818 @@
+[
+  {
+    "method": "threshold",
+    "filter": "none",
+    "air_factor": 0.8,
+    "core_radius": 3
+  },
+  {
+    "method": "threshold",
+    "filter": "gaussian",
+    "sigma": 0.7,
+    "air_factor": 0.8,
+    "core_radius": 3
+  },
+  {
+    "method": "threshold",
+    "filter": "gaussian",
+    "sigma": 1.2,
+    "air_factor": 0.8,
+    "core_radius": 3
+  },
+  {
+    "method": "threshold",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.0003,
+    "air_factor": 0.8,
+    "core_radius": 3
+  },
+  {
+    "method": "threshold",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.001,
+    "air_factor": 0.8,
+    "core_radius": 3
+  },
+  {
+    "method": "threshold",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.003,
+    "air_factor": 0.8,
+    "core_radius": 3
+  },
+  {
+    "method": "threshold",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.0003,
+    "air_factor": 0.8,
+    "core_radius": 3
+  },
+  {
+    "method": "threshold",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.001,
+    "air_factor": 0.8,
+    "core_radius": 3
+  },
+  {
+    "method": "threshold",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.003,
+    "air_factor": 0.8,
+    "core_radius": 3
+  },
+  {
+    "method": "threshold",
+    "filter": "none",
+    "air_factor": 1.0,
+    "core_radius": 3
+  },
+  {
+    "method": "threshold",
+    "filter": "gaussian",
+    "sigma": 0.7,
+    "air_factor": 1.0,
+    "core_radius": 3
+  },
+  {
+    "method": "threshold",
+    "filter": "gaussian",
+    "sigma": 1.2,
+    "air_factor": 1.0,
+    "core_radius": 3
+  },
+  {
+    "method": "threshold",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.0003,
+    "air_factor": 1.0,
+    "core_radius": 3
+  },
+  {
+    "method": "threshold",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.001,
+    "air_factor": 1.0,
+    "core_radius": 3
+  },
+  {
+    "method": "threshold",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.003,
+    "air_factor": 1.0,
+    "core_radius": 3
+  },
+  {
+    "method": "threshold",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.0003,
+    "air_factor": 1.0,
+    "core_radius": 3
+  },
+  {
+    "method": "threshold",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.001,
+    "air_factor": 1.0,
+    "core_radius": 3
+  },
+  {
+    "method": "threshold",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.003,
+    "air_factor": 1.0,
+    "core_radius": 3
+  },
+  {
+    "method": "threshold",
+    "filter": "none",
+    "air_factor": 1.2,
+    "core_radius": 3
+  },
+  {
+    "method": "threshold",
+    "filter": "gaussian",
+    "sigma": 0.7,
+    "air_factor": 1.2,
+    "core_radius": 3
+  },
+  {
+    "method": "threshold",
+    "filter": "gaussian",
+    "sigma": 1.2,
+    "air_factor": 1.2,
+    "core_radius": 3
+  },
+  {
+    "method": "threshold",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.0003,
+    "air_factor": 1.2,
+    "core_radius": 3
+  },
+  {
+    "method": "threshold",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.001,
+    "air_factor": 1.2,
+    "core_radius": 3
+  },
+  {
+    "method": "threshold",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.003,
+    "air_factor": 1.2,
+    "core_radius": 3
+  },
+  {
+    "method": "threshold",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.0003,
+    "air_factor": 1.2,
+    "core_radius": 3
+  },
+  {
+    "method": "threshold",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.001,
+    "air_factor": 1.2,
+    "core_radius": 3
+  },
+  {
+    "method": "threshold",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.003,
+    "air_factor": 1.2,
+    "core_radius": 3
+  },
+  {
+    "method": "regions",
+    "filter": "none",
+    "air_factor": 0.8,
+    "core_radius": 2
+  },
+  {
+    "method": "regions",
+    "filter": "gaussian",
+    "sigma": 0.7,
+    "air_factor": 0.8,
+    "core_radius": 2
+  },
+  {
+    "method": "regions",
+    "filter": "gaussian",
+    "sigma": 1.2,
+    "air_factor": 0.8,
+    "core_radius": 2
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.0003,
+    "air_factor": 0.8,
+    "core_radius": 2
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.001,
+    "air_factor": 0.8,
+    "core_radius": 2
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.003,
+    "air_factor": 0.8,
+    "core_radius": 2
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.0003,
+    "air_factor": 0.8,
+    "core_radius": 2
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.001,
+    "air_factor": 0.8,
+    "core_radius": 2
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.003,
+    "air_factor": 0.8,
+    "core_radius": 2
+  },
+  {
+    "method": "regions",
+    "filter": "none",
+    "air_factor": 0.8,
+    "core_radius": 3
+  },
+  {
+    "method": "regions",
+    "filter": "gaussian",
+    "sigma": 0.7,
+    "air_factor": 0.8,
+    "core_radius": 3
+  },
+  {
+    "method": "regions",
+    "filter": "gaussian",
+    "sigma": 1.2,
+    "air_factor": 0.8,
+    "core_radius": 3
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.0003,
+    "air_factor": 0.8,
+    "core_radius": 3
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.001,
+    "air_factor": 0.8,
+    "core_radius": 3
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.003,
+    "air_factor": 0.8,
+    "core_radius": 3
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.0003,
+    "air_factor": 0.8,
+    "core_radius": 3
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.001,
+    "air_factor": 0.8,
+    "core_radius": 3
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.003,
+    "air_factor": 0.8,
+    "core_radius": 3
+  },
+  {
+    "method": "regions",
+    "filter": "none",
+    "air_factor": 0.8,
+    "core_radius": 4
+  },
+  {
+    "method": "regions",
+    "filter": "gaussian",
+    "sigma": 0.7,
+    "air_factor": 0.8,
+    "core_radius": 4
+  },
+  {
+    "method": "regions",
+    "filter": "gaussian",
+    "sigma": 1.2,
+    "air_factor": 0.8,
+    "core_radius": 4
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.0003,
+    "air_factor": 0.8,
+    "core_radius": 4
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.001,
+    "air_factor": 0.8,
+    "core_radius": 4
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.003,
+    "air_factor": 0.8,
+    "core_radius": 4
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.0003,
+    "air_factor": 0.8,
+    "core_radius": 4
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.001,
+    "air_factor": 0.8,
+    "core_radius": 4
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.003,
+    "air_factor": 0.8,
+    "core_radius": 4
+  },
+  {
+    "method": "regions",
+    "filter": "none",
+    "air_factor": 1.0,
+    "core_radius": 2
+  },
+  {
+    "method": "regions",
+    "filter": "gaussian",
+    "sigma": 0.7,
+    "air_factor": 1.0,
+    "core_radius": 2
+  },
+  {
+    "method": "regions",
+    "filter": "gaussian",
+    "sigma": 1.2,
+    "air_factor": 1.0,
+    "core_radius": 2
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.0003,
+    "air_factor": 1.0,
+    "core_radius": 2
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.001,
+    "air_factor": 1.0,
+    "core_radius": 2
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.003,
+    "air_factor": 1.0,
+    "core_radius": 2
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.0003,
+    "air_factor": 1.0,
+    "core_radius": 2
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.001,
+    "air_factor": 1.0,
+    "core_radius": 2
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.003,
+    "air_factor": 1.0,
+    "core_radius": 2
+  },
+  {
+    "method": "regions",
+    "filter": "none",
+    "air_factor": 1.0,
+    "core_radius": 3
+  },
+  {
+    "method": "regions",
+    "filter": "gaussian",
+    "sigma": 0.7,
+    "air_factor": 1.0,
+    "core_radius": 3
+  },
+  {
+    "method": "regions",
+    "filter": "gaussian",
+    "sigma": 1.2,
+    "air_factor": 1.0,
+    "core_radius": 3
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.0003,
+    "air_factor": 1.0,
+    "core_radius": 3
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.001,
+    "air_factor": 1.0,
+    "core_radius": 3
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.003,
+    "air_factor": 1.0,
+    "core_radius": 3
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.0003,
+    "air_factor": 1.0,
+    "core_radius": 3
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.001,
+    "air_factor": 1.0,
+    "core_radius": 3
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.003,
+    "air_factor": 1.0,
+    "core_radius": 3
+  },
+  {
+    "method": "regions",
+    "filter": "none",
+    "air_factor": 1.0,
+    "core_radius": 4
+  },
+  {
+    "method": "regions",
+    "filter": "gaussian",
+    "sigma": 0.7,
+    "air_factor": 1.0,
+    "core_radius": 4
+  },
+  {
+    "method": "regions",
+    "filter": "gaussian",
+    "sigma": 1.2,
+    "air_factor": 1.0,
+    "core_radius": 4
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.0003,
+    "air_factor": 1.0,
+    "core_radius": 4
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.001,
+    "air_factor": 1.0,
+    "core_radius": 4
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.003,
+    "air_factor": 1.0,
+    "core_radius": 4
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.0003,
+    "air_factor": 1.0,
+    "core_radius": 4
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.001,
+    "air_factor": 1.0,
+    "core_radius": 4
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.003,
+    "air_factor": 1.0,
+    "core_radius": 4
+  },
+  {
+    "method": "regions",
+    "filter": "none",
+    "air_factor": 1.2,
+    "core_radius": 2
+  },
+  {
+    "method": "regions",
+    "filter": "gaussian",
+    "sigma": 0.7,
+    "air_factor": 1.2,
+    "core_radius": 2
+  },
+  {
+    "method": "regions",
+    "filter": "gaussian",
+    "sigma": 1.2,
+    "air_factor": 1.2,
+    "core_radius": 2
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.0003,
+    "air_factor": 1.2,
+    "core_radius": 2
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.001,
+    "air_factor": 1.2,
+    "core_radius": 2
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.003,
+    "air_factor": 1.2,
+    "core_radius": 2
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.0003,
+    "air_factor": 1.2,
+    "core_radius": 2
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.001,
+    "air_factor": 1.2,
+    "core_radius": 2
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.003,
+    "air_factor": 1.2,
+    "core_radius": 2
+  },
+  {
+    "method": "regions",
+    "filter": "none",
+    "air_factor": 1.2,
+    "core_radius": 3
+  },
+  {
+    "method": "regions",
+    "filter": "gaussian",
+    "sigma": 0.7,
+    "air_factor": 1.2,
+    "core_radius": 3
+  },
+  {
+    "method": "regions",
+    "filter": "gaussian",
+    "sigma": 1.2,
+    "air_factor": 1.2,
+    "core_radius": 3
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.0003,
+    "air_factor": 1.2,
+    "core_radius": 3
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.001,
+    "air_factor": 1.2,
+    "core_radius": 3
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.003,
+    "air_factor": 1.2,
+    "core_radius": 3
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.0003,
+    "air_factor": 1.2,
+    "core_radius": 3
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.001,
+    "air_factor": 1.2,
+    "core_radius": 3
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.003,
+    "air_factor": 1.2,
+    "core_radius": 3
+  },
+  {
+    "method": "regions",
+    "filter": "none",
+    "air_factor": 1.2,
+    "core_radius": 4
+  },
+  {
+    "method": "regions",
+    "filter": "gaussian",
+    "sigma": 0.7,
+    "air_factor": 1.2,
+    "core_radius": 4
+  },
+  {
+    "method": "regions",
+    "filter": "gaussian",
+    "sigma": 1.2,
+    "air_factor": 1.2,
+    "core_radius": 4
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.0003,
+    "air_factor": 1.2,
+    "core_radius": 4
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.001,
+    "air_factor": 1.2,
+    "core_radius": 4
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 2,
+    "epsilon": 0.003,
+    "air_factor": 1.2,
+    "core_radius": 4
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.0003,
+    "air_factor": 1.2,
+    "core_radius": 4
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.001,
+    "air_factor": 1.2,
+    "core_radius": 4
+  },
+  {
+    "method": "regions",
+    "filter": "guided",
+    "radius": 4,
+    "epsilon": 0.003,
+    "air_factor": 1.2,
+    "core_radius": 4
+  }
+]

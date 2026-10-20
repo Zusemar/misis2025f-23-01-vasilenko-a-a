@@ -1,0 +1,9 @@
+{
+  "method": "regions",
+  "filter": "gaussian",
+  "radius": 2,
+  "epsilon": 0.0003,
+  "air_factor": 1.0,
+  "core_radius": 2,
+  "sigma": 1.0
+}

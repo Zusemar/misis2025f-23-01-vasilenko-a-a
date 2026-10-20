@@ -1,0 +1,9 @@
+{
+  "development": ["0130", "1230", "1430", "2130"],
+  "control": ["0230", "0330", "0430", "1130", "1330", "2230", "2330", "2430"],
+  "selection_metric": "pooled mean IoU of shell and kernel on development only",
+  "annotation_version": "0.1",
+  "annotation_commit": "be5ecd2",
+  "boundary_tolerance_pixels": 1,
+  "limitations": "One walnut; agent-assisted annotations; control sections can intersect development sections in the same object. No independent-object generalization claim."
+}

@@ -1,0 +1,1 @@
+First technical run retained for transparency. The synthetic thin-septum semantic test failed. The propagation implementation was corrected from that synthetic failure, not from control scores. Development-selected configurations are reused without further tuning.
