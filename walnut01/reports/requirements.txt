@@ -1,3 +1,4 @@
 python-docx
 numpy
 Pillow
+pypdf

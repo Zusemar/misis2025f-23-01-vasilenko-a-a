@@ -52,6 +52,10 @@
     "src/main.cpp": "402f6a4e0a7c38ab20b7fd2b2d96a0556555a8d70c80edd0694557630430513e",
     "src/segmentation.cpp": "43197ee68358841784e0ce1badf74e776c8b3bbe20810f72e8147124b9103d9a",
     "src/segmentation.hpp": "843777ff3a9b39d975cf45843cef80737e8421372c43f280421821eaf904b803",
-    "reports/timing_snapshot.json": "7dd5812fee5b234f9829929622c2b304f90644c7129f20b7ee30de06e3d0db41"
+    "reports/timing_snapshot.json": "7dd5812fee5b234f9829929622c2b304f90644c7129f20b7ee30de06e3d0db41",
+    "CMakeLists.txt": "b0e3c9a87fe282fce6a1d88797d5ee981d9789956000c27244efb9befcbc6256",
+    "tools/run_experiments.py": "cb869e63d038f451cbd6896b61cb1cbe2558ef5fa44b853077a4db8074c49b6e",
+    "tools/evaluation.py": "07e1b592d0d3992d3e9e815dfe4acf0bfcd4aa692363294add2360722c4889e2",
+    "tests/test_segmentation.cpp": "1e25c92dcdf13489944f0d2fc3abbb5097a06d0508d53a4dfce29f54596bd9c0"
   }
 }

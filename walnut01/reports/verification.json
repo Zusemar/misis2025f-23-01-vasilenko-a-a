@@ -1,13 +1,28 @@
 {
   "status": "passed",
-  "date": "2026-10-20",
+  "date": "2026-10-27",
   "code_results_commit": "67e83ccc96e7eeddc1f27dbc0c364e621f5f3b7c",
-  "pages": 24,
+  "pages": 28,
   "tables": 8,
   "figures": 20,
   "native_equations": 8,
   "pdf_links": 13,
-  "verified_frozen_inputs": 52,
+  "verified_frozen_inputs": 56,
+  "formatting": {
+    "font": "Times New Roman",
+    "size_pt": 14,
+    "text_color": "000000",
+    "table_fill": null,
+    "table_border_color": "000000",
+    "embedded_media_unchanged": true,
+    "class_colors_described": true,
+    "architecture_pages": [
+      16,
+      17,
+      18,
+      19
+    ]
+  },
   "visual_review": {
     "pages": [
       1,
@@ -33,7 +48,11 @@
       21,
       22,
       23,
-      24
+      24,
+      25,
+      26,
+      27,
+      28
     ],
     "checked": [
       "layout",
@@ -42,14 +61,16 @@
       "tables",
       "equations",
       "page_numbers",
+      "contents",
       "annotation_pairs"
     ],
     "result": "All final rendered pages inspected; no clipping or overlapping content."
   },
   "files_sha256": {
-    "walnut_project_report.docx": "44dc39b2f5654f807527e6faf6a8d07ce11cb26fcf3baa3a7388baec9dc2ff28",
-    "walnut_project_report.pdf": "15b2f41b883398cd2c0d9c3de6a94f89fcf7ff409921c33135c4c09a1a423fb9",
-    "build_report.py": "cd55a3c041b843939fa6f1c4d87e138afbbf88775a6eb330df550e3df467f7dc",
-    "frozen_inputs.json": "33991fa0d8bdd3d824b36c1ba7c9394e3ad173db49ff410640c82f54cac03312"
+    "walnut_project_report.docx": "b46a5a388664d1544256aebfa170ae96c24e6d1cb80c74ee03743ac0557c64d7",
+    "walnut_project_report.pdf": "6773354dbb6561a58668ebc17c7e22fe4d92e323c47c82c3814a20760598886d",
+    "build_report.py": "a342e3ccf4bb580e7a580fda52dd93c8c5df70173e2232b93add0d5497486683",
+    "frozen_inputs.json": "e54a83fa444374b329b9c61bb43edb9fbe01ea66e51ba18e0f7b38146ca01fa2",
+    "pagination.json": "a61ca891eed107f5890fd0afcbfaa1be997b773d3de81eb3441acc55f8ed1d20"
   }
 }

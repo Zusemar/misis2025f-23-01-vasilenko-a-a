@@ -9,6 +9,7 @@ import csv
 import json
 import math
 import hashlib
+import argparse
 
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
@@ -34,6 +35,7 @@ MANIFEST=json.loads((ROOT/'annotations/manifest.json').read_text())
 PROTOCOL=json.loads((ROOT/'configs/protocol.json').read_text())
 SELECTED=METRICS['_recommended']['variant']
 PER_IMAGE=list(csv.DictReader((ROOT/'results/per_image_metrics.csv').open()))
+PAGINATION=json.loads((HERE/'pagination.json').read_text()) if (HERE/'pagination.json').exists() else {}
 
 def font(size,bold=False):
     options=['/System/Library/Fonts/Supplemental/Arial'+(' Bold' if bold else '')+'.ttf',
@@ -145,38 +147,38 @@ class Report:
         s.header_distance=Cm(0.7);s.footer_distance=Cm(0.7)
         s.different_first_page_header_footer=True
         styles=self.doc.styles
-        for name in ['Normal','Title','Subtitle','Heading 1','Heading 2','Heading 3','Caption']:
-            st=styles[name];st.font.name='Times New Roman';st.font.color.rgb=RGBColor(0,0,0)
-            st._element.get_or_add_rPr().append(xml('w:rFonts',**{'w:ascii':'Times New Roman','w:hAnsi':'Times New Roman','w:cs':'Times New Roman'}))
-        normal=styles['Normal'];normal.font.size=Pt(12)
-        normal.paragraph_format.line_spacing=1.14
+        for st in styles:
+            if not hasattr(st,'font'):continue
+            st.font.name='Times New Roman';st.font.size=Pt(14);st.font.color.rgb=RGBColor(0,0,0)
+            st._element.get_or_add_rPr().append(xml('w:rFonts',**{'w:ascii':'Times New Roman','w:hAnsi':'Times New Roman','w:eastAsia':'Times New Roman','w:cs':'Times New Roman'}))
+        normal=styles['Normal'];normal.font.size=Pt(14)
+        normal.paragraph_format.line_spacing=1.08
         normal.paragraph_format.space_after=Pt(5)
         normal.paragraph_format.first_line_indent=Cm(0.7)
         normal.paragraph_format.widow_control=True
-        for name,size in [('Heading 1',15),('Heading 2',13),('Heading 3',12)]:
+        for name,size in [('Heading 1',14),('Heading 2',14),('Heading 3',14)]:
             style=styles[name];style.font.size=Pt(size);style.font.bold=True
             style.paragraph_format.first_line_indent=Cm(0)
             style.paragraph_format.space_before=Pt(8);style.paragraph_format.space_after=Pt(8)
             style.paragraph_format.keep_with_next=True
-        styles['Title'].font.size=Pt(24);styles['Title'].font.bold=True
+        styles['Title'].font.size=Pt(14);styles['Title'].font.bold=True
         styles['Title'].paragraph_format.first_line_indent=Cm(0)
         # The bundled Word template carries a blue border on Title. Remove
         # inherited decorative paragraph borders for this academic report.
         for node in list(styles.element.xpath('.//w:pBdr')):
             node.getparent().remove(node)
-        styles['Caption'].font.size=Pt(10.5)
+        styles['Caption'].font.size=Pt(14)
         styles['Caption'].paragraph_format.first_line_indent=Cm(0)
         styles['Caption'].paragraph_format.space_after=Pt(8)
         styles['Caption'].paragraph_format.line_spacing=1.05
         styles['Caption'].font.italic=False
-        header=s.header.paragraphs[0];header.text='Сегментация частей грецкого ореха'
-        header.paragraph_format.first_line_indent=Cm(0);header.alignment=WD_ALIGN_PARAGRAPH.RIGHT
-        for run in header.runs:run.font.size=Pt(9);run.font.color.rgb=RGBColor(0,0,0)
+        # Minimal page furniture: only the page number is retained.
+        s.header.paragraphs[0].text=''
         footer=s.footer.paragraphs[0];footer.alignment=WD_ALIGN_PARAGRAPH.CENTER
         footer.paragraph_format.first_line_indent=Cm(0)
         run=footer.add_run();run._r.append(xml('w:fldChar',**{'w:fldCharType':'begin'}))
         instr=xml('w:instrText');instr.text=' PAGE ';run._r.append(instr)
-        run._r.append(xml('w:fldChar',**{'w:fldCharType':'end'}));run.font.size=Pt(10)
+        run._r.append(xml('w:fldChar',**{'w:fldCharType':'end'}));run.font.size=Pt(14)
         settings=self.doc.settings.element
         settings.append(xml('w:updateFields',**{'w:val':'true'}))
         self.doc.core_properties.title='Сегментация частей грецкого ореха на КТ сечениях'
@@ -185,9 +187,12 @@ class Report:
         self.doc.core_properties.keywords='КТ, грецкий орех, сегментация, guided filter, OpenCV'
 
     def page(self,title=None):
-        if self.count:self.doc.add_page_break()
+        new_page=self.count>0
         self.count+=1
-        if title:self.doc.add_heading(title,level=1)
+        if title:
+            heading=self.doc.add_heading(title,level=1)
+            heading.paragraph_format.page_break_before=new_page
+        elif new_page:self.doc.add_page_break()
 
     def p(self,text='',bold=False,align=None):
         p=self.doc.add_paragraph();p.alignment=align or WD_ALIGN_PARAGRAPH.JUSTIFY
@@ -199,7 +204,7 @@ class Report:
     def link(self,text,url):
         p=self.doc.add_paragraph();p.paragraph_format.first_line_indent=Cm(0)
         h=xml('w:hyperlink',**{'r:id':p.part.relate_to(url,RT.HYPERLINK,is_external=True)})
-        r=xml('w:r');pr=xml('w:rPr');pr.append(xml('w:color',**{'w:val':'164B7A'}));pr.append(xml('w:u',**{'w:val':'single'}))
+        r=xml('w:r');pr=xml('w:rPr');pr.append(xml('w:color',**{'w:val':'000000'}));pr.append(xml('w:u',**{'w:val':'single'}))
         r.append(pr);t=xml('w:t');t.text=text;r.append(t);h.append(r);p._p.append(h)
         return p
 
@@ -214,7 +219,7 @@ class Report:
         c.alignment=WD_ALIGN_PARAGRAPH.CENTER
         return c
 
-    def table(self,headers,rows,widths,caption=None,size=10.5):
+    def table(self,headers,rows,widths,caption=None,size=14):
         if caption:
             p=self.doc.add_paragraph(caption,style='Caption');p.paragraph_format.keep_with_next=True
         t=self.doc.add_table(rows=1,cols=len(headers));t.alignment=WD_TABLE_ALIGNMENT.CENTER;t.autofit=False
@@ -230,18 +235,17 @@ class Report:
                 cell.width=Cm(widths[i]);cell.vertical_alignment=WD_CELL_VERTICAL_ALIGNMENT.CENTER
                 tcpr=cell._tc.get_or_add_tcPr();borders=xml('w:tcBorders')
                 for side in ['top','left','bottom','right']:
-                    borders.append(xml('w:'+side,**{'w:val':'single','w:sz':'5','w:color':'D9D9D9'}))
+                    borders.append(xml('w:'+side,**{'w:val':'single','w:sz':'5','w:color':'000000'}))
                 tcpr.append(borders)
                 margins=xml('w:tcMar')
                 for side,value in [('top',65),('bottom',65),('left',85),('right',85)]:
                     margins.append(xml('w:'+side,**{'w:w':value,'w:type':'dxa'}))
                 tcpr.append(margins)
-                if rownum==0:tcpr.append(xml('w:shd',**{'w:fill':'E9EDF2','w:val':'clear'}))
                 for p in cell.paragraphs:
                     p.paragraph_format.first_line_indent=Cm(0);p.paragraph_format.space_after=Pt(0)
                     p.paragraph_format.line_spacing=1.05
                     p.alignment=WD_ALIGN_PARAGRAPH.LEFT if i==0 else WD_ALIGN_PARAGRAPH.CENTER
-                    for run in p.runs:run.font.name='Times New Roman';run.font.size=Pt(size);run.bold=rownum==0
+                    for run in p.runs:run.font.name='Times New Roman';run.font.size=Pt(14);run.bold=rownum==0
         self.doc.add_paragraph().paragraph_format.space_after=Pt(1)
         return t
 
@@ -257,7 +261,7 @@ class Report:
         for line in text.strip().splitlines():
             p=self.doc.add_paragraph();p.paragraph_format.first_line_indent=Cm(0)
             p.paragraph_format.space_after=Pt(1);p.paragraph_format.line_spacing=1.0
-            run=p.add_run(line);run.font.name='Courier New';run.font.size=Pt(9)
+            run=p.add_run(line);run.font.name='Times New Roman';run.font.size=Pt(14)
 
 def build():
     snapshot=json.loads((HERE/'frozen_inputs.json').read_text())
@@ -265,7 +269,10 @@ def build():
         path=ROOT/name
         if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest()!=digest:
             raise RuntimeError('Report inputs changed; review the text before rebuilding: '+name)
-    make_figures();r=Report()
+    expected=[FIG/f'annotation_{c}.png' for c in PROTOCOL['development']+PROTOCOL['control']]
+    expected += [FIG/f'{name}.png' for name in ['case_0230','case_2230','filters','markers','pipeline']]
+    if not all(p.exists() for p in expected):make_figures()
+    r=Report()
     # 1 Cover. Details absent from the request (group/semester) are not invented.
     r.page()
     for text in ['Национальный исследовательский технологический','университет «МИСИС»']:
@@ -277,7 +284,7 @@ def build():
     p=r.p('Дисциплина «Компьютерное зрение»',align=WD_ALIGN_PARAGRAPH.CENTER);p.paragraph_format.first_line_indent=Cm(0)
     r.p().paragraph_format.space_after=Pt(36)
     p=r.p('Выполнил Василенко А. А.',align=WD_ALIGN_PARAGRAPH.RIGHT);p.paragraph_format.first_line_indent=Cm(0)
-    p=r.p('20 октября 2026 года',align=WD_ALIGN_PARAGRAPH.RIGHT);p.paragraph_format.first_line_indent=Cm(0)
+    p=r.p('27 октября 2026 года',align=WD_ALIGN_PARAGRAPH.RIGHT);p.paragraph_format.first_line_indent=Cm(0)
     r.p().paragraph_format.space_after=Pt(30)
     r.link('Репозиторий проекта',REPO)
     r.link('Код экспериментов и результаты',CODE_URL)
@@ -290,15 +297,15 @@ def build():
     r.p('Метод по областям без сглаживания получил средний IoU скорлупы и ядра 95,84% на восьми контрольных сечениях. Базовый пороговый метод получил 66,30%. Guided filter проверен как способ сглаживания с сохранением границ; в этих экспериментах он не улучшил основной вариант. Цифры описывают согласие с полуавтоматической разметкой одного ореха.')
     r.h('Содержание')
     toc=[('1 Постановка задачи и данные',3),('2 Разметка частей ореха',4),('3 Схема обработки и базовый метод',5),
-         ('3 1 Фильтрация с сохранением границ',6),('3 2 Автоматические маркеры',7),('3 3 Распространение классов',8),
-         ('4 Протокол эксперимента',9),('4 1 Метрики качества',10),('5 Результаты сравнения',11),
-         ('5 1 Классы и границы',12),('5 2 Пример успешной сегментации',13),('5 3 Разбор трудного сечения',14),
-         ('6 Реализация и воспроизведение',15),('7 Выводы и ограничения',16),('Источники',17),
+         ('4 Протокол эксперимента',9),('5 Результаты сравнения',11),
+         ('6 Архитектура программы',15),('6 3 Параметры и оценка',16),
+         ('6 5 Воспроизведение',17),('6 6 Проверки и измерения',18),
+         ('7 Выводы и ограничения',19),('Источники',20),
          ('Приложение А Размеченные сечения',18),('Приложение Б Качество по сечениям',24)]
     for title,page in toc:
         p=r.doc.add_paragraph();p.paragraph_format.first_line_indent=Cm(0);p.paragraph_format.space_after=Pt(3)
         p.paragraph_format.tab_stops.add_tab_stop(Cm(16.8),WD_TAB_ALIGNMENT.RIGHT,WD_TAB_LEADER.DOTS)
-        p.add_run(title+'\t'+str(page))
+        p.add_run(title+'\t'+str(PAGINATION.get(title,page)))
 
     # 3 Input dataset.
     r.page('1 Постановка задачи и данные')
@@ -313,13 +320,15 @@ def build():
 
     # 4 Annotation.
     r.page('2 Разметка частей ореха')
-    r.table(['Код','Класс','Правило отнесения'],[
-        ['0','Воздух и фон','Наружный фон, внутренние пустоты, держатель и фоновые артефакты'],
-        ['1','Скорлупа','Скорлупа и различимые внутренние стенки и перегородки'],
-        ['2','Ядро','Ткань ядра, в том числе небольшие изолированные профили']],
-        [1.1,3.8,12.1],'Таблица 2 - Принятые классы')
+    r.table(['Код','Класс и цвет','Правило отнесения'],[
+        ['0','Воздух и фон\nТёмно-синий','Наружный фон, внутренние пустоты, держатель и фоновые артефакты'],
+        ['1','Скорлупа\nОранжевый','Скорлупа и различимые внутренние стенки и перегородки'],
+        ['2','Ядро\nГолубой','Ткань ядра, в том числе небольшие изолированные профили']],
+        [1.5,4.3,11.2],'Таблица 2 - Принятые классы и цвета разметки')
+    r.p('Эти цвета используются на цветных масках разметки и итоговой сегментации. В исходных КТ изображениях показаны уровни серого. На наложениях цвет нанесён поверх исходника; карта ошибок имеет отдельную легенду, приведённую при разборе результатов.')
     r.p('Перегородки включены в класс скорлупы по принятому правилу сегментации. Это не утверждение об их гистологическом составе. На границе тканей яркости смешиваются, поэтому часть пикселей допускает неоднозначное толкование.')
     r.p('Разметка v0.1 подготовлена агентом полуавтоматически. По исходникам выбраны области ядра, огибающие полигоны и исправляющие штрихи перегородок; пиксельные границы уточнены по интенсивности. Агент просмотрел наложения и исправил заметные ошибки. Независимая экспертная проверка не выполнялась.')
+    r.page('2 1 Подготовка и проверка разметки')
     r.picture(FIG/'annotation_0130.png',16.3,'Пример исходного сечения и разметки v0.1')
     r.p('Маски 0/1/2 сохраняют исходные координаты. Отдельно записана полоса около границ классов, требующая осторожной интерпретации. Это эвристическая полоса, а не вероятность ошибки. В основных метриках учитываются все пиксели.')
     r.p('3D Slicer предоставляет инструменты просмотра и редактирования сегментов [7]. В выполненных экспериментах разметка подготовлена программно и проверена изображениями наложений; обработка в 3D Slicer не выполнялась.')
@@ -328,7 +337,7 @@ def build():
     r.page('3 Схема обработки и базовый метод')
     r.p('Сравниваются две схемы, каждая может работать без фильтра, после Gaussian или после guided filter. На входе проверяются тип float32, число каналов и конечность неотрицательных значений. Нормированная яркость получается делением исходной на 0,067. Геометрия сечения остаётся прежней.')
     r.picture(FIG/'pipeline.png',17,'Сравниваемые ветки автоматической обработки')
-    r.p('Два порога рассчитываются по гистограмме с 256 интервалами как максимум межклассовой дисперсии трёх групп. Это обобщение критерия Отцу [4]. Нижний порог выделяет материал, второй разделяет средние и высокие яркости. Чтобы расчёт не уходил в шумовой диапазон, применяются ограничения, перечисленные на странице 8.')
+    r.p('Два порога рассчитываются по гистограмме с 256 интервалами как максимум межклассовой дисперсии трёх групп. Это обобщение критерия Отцу [4]. Нижний порог выделяет материал, второй разделяет средние и высокие яркости. Чтобы расчёт не уходил в шумовой диапазон, применяются ограничения из таблицы 3.')
     r.p('В базовом методе пиксели ниже порога материала относятся к фону, средний диапазон - к ядру, верхний - к скорлупе. Преимущество такого решения - простота. Ограничение состоит в том, что яркости тонких стенок, перегородок и ядра могут перекрываться.')
     r.p('Маска тканей очищается только от изолированных компонент размером менее трёх пикселей. Реальные пустоты внутри ореха автоматически не заполняются. Если максимальная яркость исходника ниже 0,012, программа выдаёт фоновую маску.')
     r.p('Для учебной выборки одного ореха выбраны классические методы с небольшим числом параметров и явными промежуточными масками. Их поведение можно проверить по каждому сечению и каждой ошибке.')
@@ -366,7 +375,7 @@ def build():
         ['Минимальная площадь маркера','4 пикселя','Отсечение малых центральных областей'],
         ['Окно локального СКО','7 × 7','Измерение текстуры'],
         ['Вес скачка яркости','10','Стоимость перехода в графе']],
-        [6.3,4.2,6.5],'Таблица 3 - Активные параметры основного варианта',size=10)
+        [6.3,4.2,6.5],'Таблица 3 - Активные параметры основного варианта')
     r.p('Тонкая перегородка может касаться ядра, оставаясь другим классом. Поэтому на её протяжённых участках задаются автоматические маркеры скорлупы: локальная полутолщина не более r + 0,5 пикселя и расстояние до центральной области больше r + 2 пикселей. Это препятствует распространению ядра вдоль всей перегородки.')
 
     # 9 Experiment protocol.
@@ -432,7 +441,24 @@ def build():
     r.p('Различие выделено малиновым. Яркость и текстура этой области близки к выбранным признакам ядра. Такой случай требует проверки правила разметки и дополнительных признаков; усиление сглаживания само по себе не разрешает семантическую неоднозначность.')
 
     # 15 Implementation and runnable commands.
-    r.page('6 Реализация и воспроизведение')
+    r.page('6 Архитектура программы')
+    r.p('Программа разделена на вычислительное ядро C++ и консольную оболочку. Подбор параметров, расчёт метрик и иллюстрации вынесены в Python инструменты. Такое разделение позволяет запускать один и тот же алгоритм в эксперименте и при обработке нового TIFF, а также проверять вычисления отдельно от файловых операций.')
+    r.h('6 1 Вычислительное ядро и консольная оболочка')
+    r.p('CMake собирает segmentation.cpp в библиотеку walnut_core. Её интерфейс объявлен в segmentation.hpp: структуры Parameters и Result, функции фильтрации, расчёта порогов и segment. Основной вызов segment(image, parameters) получает изображение и параметры в памяти. Ему не передаются имя файла, каталог разметки или координаты размеченных областей.')
+    r.p('Файл main.cpp отвечает за аргументы запуска, поиск TIFF, загрузку и сохранение результатов. Файлы в папке сортируются перед обработкой. Консольная программа вызывает библиотеку для каждого изображения, поэтому тесты могут обращаться к тому же ядру без создания файлов и запуска отдельного процесса.')
+    r.h('6 2 Контракты входа и результата')
+    r.p('Для изображения принят строгий контракт: один канал float32, конечные неотрицательные значения. Неподходящие данные вызывают исключение; main перехватывает его, выводит сообщение и завершает запуск с ненулевым кодом. Это позволяет обнаружить ошибочную глубину TIFF до получения маски в неверной шкале яркости.')
+    r.p('Структура Result возвращает итоговые метки uint8 со значениями 0, 1 и 2, обработанное изображение float32 в исходных единицах и маски промежуточных этапов. В ней также хранятся пороги, признаки областей и время вычисления. Цвета вводятся только при визуализации: числовые классы не зависят от палитры.')
+
+    r.page('6 3 Параметры и оценка')
+    r.p('Настройки собраны в структуре Parameters и читаются из JSON через OpenCV FileStorage. Консольные параметры --filter и --method могут переопределить соответствующие поля; после этого конфигурация проверяется повторно. Фактически использованные значения сохраняются в parameters.json вместе с версией OpenCV и числом потоков. Это позволяет установить, с какими настройками была получена маска.')
+    r.p('Выбор фильтра и способа сегментации выполняется внутри общего вычислительного пути. Ветки none, gaussian и guided используют одну шкалу интенсивности, а методы threshold и regions возвращают одинаковый формат Result. Для небольшого набора вариантов достаточно функций и структур; отдельная иерархия классов для каждого фильтра не вводилась.')
+    r.p('Guided filter реализован через boxFilter из стандартного imgproc. Для сборки нужны только core, imgproc и imgcodecs, без модуля ximgproc. Это уменьшает число внешних компонентов и сохраняет возможность проверить формулы фильтра непосредственно в исходниках. Обратная сторона решения - необходимость собственных проверок численной реализации.')
+    r.h('6 4 Разделение сегментации и оценки')
+    r.p('Инструмент run_experiments.py запускает собранную C++ программу отдельным процессом. Он читает протокол разделения, перебирает конфигурации на настроечной части и сохраняет selection.json. Контрольные маски используются отдельным шагом для оценки выбранных вариантов. Разметка доступна инструменту оценки, но не входит в интерфейс segment.')
+    r.p('Для проверки причин ошибок сохраняются material, cores и markers, а также таблицы diagnostics.csv и regions.csv. Это реальные данные из C++ вычислений. Галерея строится из них и итоговых масок, поэтому позволяет отличить ошибку порога от ошибки маркера или распространения класса. Дополнительные файлы увеличивают объём результатов, но делают каждый этап проверяемым.')
+
+    r.page('6 5 Воспроизведение')
     r.p('Основная программа написана на C++20 с OpenCV. Она не обращается к разметке. Python инструменты отдельно выполняют подбор параметров, оценку и подготовку иллюстраций. В репозитории сохранены конфигурации всех сравниваемых вариантов и промежуточные числовые маски.')
     r.table(['Материал','Назначение'],[
         ['walnut01/src/','Фильтры, пороги, автоматические маркеры, распространение классов и CLI'],
@@ -450,8 +476,11 @@ walnut01/build/walnut_segment walnut01/data/images \\
   --config walnut01/configs/recommended.json
 python walnut01/tools/run_experiments.py --reuse-selection
 python walnut01/tools/visualize_results.py''')
+    r.page('6 6 Проверки и измерения')
+    r.p('В сборке CMake выделены три цели: библиотека walnut_core, программа walnut_segment и тестовый исполняемый файл walnut_tests. Последний подключает ту же библиотеку и запускается через CTest. Разделение целей позволяет проверить фильтр и семантику сегментации без повторной реализации алгоритма в тестах.')
     r.p('Проверенная среда: macOS, AppleClang 17, OpenCV 4.13.0. Вычисления OpenCV выполняются в одном потоке. Среднее время обработки одного сечения в сохранённом запуске основного варианта - 16,38 мс; чтение и запись файлов в эту величину не входят. Это наблюдение одного запуска, а не универсальный замер производительности.')
     r.p('Проверены сохранение константы и резкой границы фильтром, фоновые изображения, классы на искусственном сечении и тонкая перегородка. Неверный тип входа и NaN отвергаются. Четыре Python теста проверяют метрики и особые случаи отсутствующих классов. Проверка переименованного TIFF подтвердила независимость результата от имени файла.')
+    r.p('При консольном запуске OpenCV ограничен одним потоком, а список входных файлов отсортирован. Это фиксирует порядок обработки и условия сохранённого измерения времени. Параметры, версия библиотеки и контрольные суммы разметки сохраняются отдельно от изображений; повторный запуск можно сопоставить с исходным экспериментом.')
 
     # 16 Conclusions.
     r.page('7 Выводы и ограничения')
@@ -511,7 +540,47 @@ python walnut01/tools/visualize_results.py''')
     r.link('Числовые результаты по каждому сечению',f'{REPO}/blob/{CODE_COMMIT}/walnut01/results/per_image_metrics.csv')
     r.link('Сводные показатели и матрицы ошибок',f'{REPO}/blob/{CODE_COMMIT}/walnut01/results/metrics.json')
     r.p('Для автономного просмотра можно открыть results/gallery.html вместе с папкой results/visuals. Конфигурация recommended.json соответствует основному варианту; guided_regions.json воспроизводит вариант с фильтром, сохраняющим границы.')
+    # Enforce the requested typography and unshaded tables, including inherited
+    # Word template styles. The embedded photographs and plots are preserved.
+    for parent in [r.doc.styles.element,r.doc.element]:
+        for node in list(parent.xpath('.//w:shd')):node.getparent().remove(node)
+        for node in parent.xpath('.//w:color'):
+            node.attrib.clear();node.set(qn('w:val'),'000000')
+        for node in parent.xpath('.//w:rFonts'):
+            node.attrib.clear()
+            for key in ['ascii','hAnsi','eastAsia','cs']:node.set(qn('w:'+key),'Times New Roman')
+        for node in parent.xpath('.//w:sz | .//w:szCs'):node.set(qn('w:val'),'28')
+    for math_run in r.doc.element.xpath('.//m:r'):
+        pr=xml('w:rPr');pr.append(xml('w:rFonts',**{'w:ascii':'Times New Roman','w:hAnsi':'Times New Roman'}));pr.append(xml('w:sz',**{'w:val':'28'}));math_run.insert(1,pr)
+    for setting in r.doc.settings.element.xpath('.//m:mathFont'):setting.set(qn('m:val'),'Times New Roman')
     r.doc.save(OUT)
     print(f'DOCX: {OUT}; planned pages: {r.count}; figures: {r.figures}')
 
-if __name__=='__main__':build()
+def update_pagination(pdf_path):
+    """Synchronize the contents with an exported PDF before the final render."""
+    from pypdf import PdfReader
+    titles=[p.text for p in Document(OUT).paragraphs if p.style.name=='Heading 1']
+    found={}
+    for number,page in enumerate(PdfReader(pdf_path).pages,1):
+        lines=page.extract_text().splitlines()
+        if lines and lines[0].strip()==str(number):lines=lines[1:]
+        text=' '.join(' '.join(lines).split())
+        for title in titles:
+            if text.startswith(title):found.setdefault(title,number)
+    required=['1 Постановка задачи и данные','2 Разметка частей ореха',
+              '3 Схема обработки и базовый метод','4 Протокол эксперимента',
+              '5 Результаты сравнения','6 Архитектура программы',
+              '6 3 Параметры и оценка','6 5 Воспроизведение','6 6 Проверки и измерения',
+              '7 Выводы и ограничения','Источники','Приложение А Размеченные сечения',
+              'Приложение Б Качество по сечениям']
+    missing=set(required)-found.keys()
+    if missing:raise RuntimeError('Section headings not found in the rendered PDF: '+str(missing))
+    PAGINATION.update(found)
+    (HERE/'pagination.json').write_text(json.dumps(PAGINATION,ensure_ascii=False,indent=2)+'\n')
+
+if __name__=='__main__':
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--pagination-from',type=Path,help='Refresh contents page numbers from an exported PDF')
+    args=parser.parse_args()
+    if args.pagination_from:update_pagination(args.pagination_from)
+    build()
